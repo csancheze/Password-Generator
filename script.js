@@ -1,13 +1,105 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-
 var alphaArray = "";
+var betaArray = "";
 var mayus = "QWERTYUIOPASDFGHJKLZXCVBNM";
 var minus = "mnbvcxzlkjhgfdsapoiuytrewq";
 var nums = "1234567890";
 var syms = "!\"#$%\&\'()*+,-./:;<=>?@[\\]^_`{|}~";
+var password = "";
 
-//Getting form
+
+// Write password to the #password input
+function writePassword() {
+  var sure = confirm("Are you sure?");
+  if (sure === false) {
+    location.reload();
+  } else {
+  atLeastOne();
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+  showForm();
+}}
+
+//functions for criteria
+function atLeastOne() {
+  var checkBoxes = document.getElementsByClassName("criteria");
+  var isChecked = false;
+      for (var i = 0; i < checkBoxes.length; i++) {
+          if ( checkBoxes[i].checked ) {
+              isChecked = true;
+          };
+      };
+      if (isChecked) {;
+          } else {
+              alert("Please, choose at least one character type");
+              location.reload();
+          }   
+  }
+
+//function for choosing correct array
+
+function chooseArray() {
+  var upperCase = document.getElementById("uppercase");
+  var lowerCase = document.getElementById("lowercase");
+  var numBers = document.getElementById("numbers");
+  var symBols = document.getElementById("symbols");
+      if (upperCase.checked) {
+        alphaArray = alphaArray + mayus;
+      } if (lowerCase.checked) {
+        alphaArray = alphaArray + minus;
+      } if (numBers.checked) {
+        alphaArray = alphaArray + nums;
+      } if (symBols.checked) {
+        alphaArray = alphaArray + syms;
+      }
+    return alphaArray;
+    }
+
+
+
+ //function for showing the form
+ function showForm() {
+  var x = document.getElementById("myForm");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function close() {
+  location.reload();
+}
+
+
+//generate password
+
+function generatePassword() {
+  var betaChar = chooseArray();
+  console.log(betaChar);
+  var passLength = document.getElementById("many")
+  var passwordLength = (passLength.value)
+  for (var i = 1; i <= passwordLength; i++) {
+    var randomNumber = Math.floor(Math.random() * betaChar.length);
+    password += betaChar.substring(randomNumber, randomNumber +1);
+   }
+   console.log(password)
+   return password;
+}
+
+//this was not used.
+/* Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+*/ 
+
+
+/*Testing
+
 const passLength = document.getElementById("many")
 console.log(many.value);
 
@@ -22,8 +114,8 @@ console.log(numBers.checked);
 
 const symBols = document.getElementById("symbols");
 console.log(symBols.checked);
-
-//Choosing characters
+*/
+/*Choosing characters
 if (upperCase.checked) {
   alphaArray = alphaArray + mayus;
 } if (lowerCase.checked) {
@@ -34,64 +126,6 @@ if (upperCase.checked) {
   alphaArray = alphaArray + syms;
 }
 console.log(alphaArray)
+*/
 
 
-
-
-
-
-
-
-
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
-
-//functions for criteria
-function atLeastOne() {
-  var checkBoxes = document.getElementsByClassName("criteria");
-  var isChecked = false;
-      for (var i = 0; i < checkBoxes.length; i++) {
-          if ( checkBoxes[i].checked ) {
-              isChecked = true;
-          };
-      };
-      if (isChecked) {
-          chooseArray();
-          } else {
-              alert("Please, choose at least one character type");
-          }   
-  }
-
-  //function for choosing correct array
-
- //function for showing the form
- function showForm() {
-  var x = document.getElementById("myForm");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-function hideForm() {
-  var x = document.getElementById("myForm");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "none";
-  }
-}

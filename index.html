@@ -26,12 +26,13 @@
         </div>
         <div class="card-footer">
         <button class="btn" onclick="showForm()">Generate Password</button>
+        <button class="btn2" onclick="location.reload()">Clear</button>
         </div>
       </div>
     </div>
  
     <div id="myForm">
-      <form id="forma">
+      <form id="forma" onsubmit="writePassword() ;return false">
           <h2 class="criteria">How would you like your password?</label>
           <ul>
           <li>
@@ -54,13 +55,13 @@
           <label for="many">How many characters? (8-128) </label>
           <input type="number" min="8" max="128" id="many" name="many" value="8">
           </li>
+          <br>
           <li>
-          <button type="submit" id="generate" >Generate Password</button> 
+          <button type="submit">Generate Password</button> 
           
           </li>
         </ul>
       </form>
-      <button id="close" onclick="showForm()">Close</button>
     </div>
    
     <script src="script.js"></script>
