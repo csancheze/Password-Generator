@@ -81,15 +81,13 @@ function chooseArray() {
 
 function generatePassword() {
   var betaChar = chooseArray();
-  console.log(betaChar);
   var passLength = document.getElementById("many")
   var passwordLength = (passLength.value)
   password = "";
   for (var i = 1; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * betaChar.length);
     password += betaChar.substring(randomNumber, randomNumber +1);
-   }
-   console.log(password)
+  }
    return password;
 }
 

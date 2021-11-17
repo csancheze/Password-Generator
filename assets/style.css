@@ -124,12 +124,11 @@ button[disabled] {
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
   }
-  }
 
   #password {
     font-size: 1rem;
   }
-
+}
 
 @media (max-width: 500px) {
   .btn {
@@ -152,9 +151,12 @@ button[disabled] {
     max-height: 100%;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 948px) {
     #myForm {
-      left: 5%;
+      left: 0%;
+    }
+    #forma {
+      font-size: 1rem;
     }
   }
  #myForm::after {
