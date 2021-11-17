@@ -26,11 +26,12 @@
         </div>
         <div class="card-footer">
         <button class="btn" onclick="showForm()">Generate Password</button>
-        <button class="btn2" onclick="location.reload()">Clear</button>
         </div>
       </div>
     </div>
- 
+    <div id="close">
+      <button type="button" onclick="showForm()">X</button>
+    </div> 
     <div id="myForm">
       <form id="forma" onsubmit="writePassword() ;return false">
           <h2 class="criteria">How would you like your password?</label>
@@ -58,7 +59,6 @@
           <br>
           <li>
           <button type="submit">Generate Password</button> 
-          
           </li>
         </ul>
       </form>

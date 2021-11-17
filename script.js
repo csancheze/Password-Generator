@@ -67,11 +67,14 @@ function chooseArray() {
   } else {
     x.style.display = "none";
   }
-}
+  var y = document.getElementById("close");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+  } else {
+    y.style.display = "none";
+  }
+ }
 
-function close() {
-  location.reload();
-}
 
 
 //generate password
@@ -81,6 +84,7 @@ function generatePassword() {
   console.log(betaChar);
   var passLength = document.getElementById("many")
   var passwordLength = (passLength.value)
+  password = "";
   for (var i = 1; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * betaChar.length);
     password += betaChar.substring(randomNumber, randomNumber +1);
