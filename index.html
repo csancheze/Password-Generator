@@ -29,10 +29,10 @@
         </div>
       </div>
     </div>
-    <div id="close">
+    <div id="close" style="display:none">
       <button type="button" onclick="showForm()">X</button>
     </div> 
-    <div id="myForm">
+    <div id="myForm" style="display:none">
       <form id="forma" onsubmit="writePassword() ;return false">
           <h2 class="criteria">How would you like your password?</label>
           <ul>
@@ -54,7 +54,7 @@
           </li>
           <li>
           <label for="many">How many characters? (8-128) </label>
-          <input type="number" min="8" max="128" id="many" name="many" value="8">
+          <input style="display: block" type="number" min="8" max="128" id="many" name="many" value="8">
           </li>
           <br>
           <li>

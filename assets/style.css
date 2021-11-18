@@ -139,7 +139,7 @@ button[disabled] {
 /*Form for password criteria */
 
 #myForm {
-  display: none;
+  
     position: absolute;
     z-index: 2;
     top: 10%;
@@ -188,6 +188,11 @@ button[disabled] {
   list-style: none;
 }
 
+#myForm ul li{
+  margin: 5px;
+}
+
+
 #myForm ul li button {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -207,7 +212,7 @@ button[disabled] {
    position: absolute;
    top: 5%;
    right: 5%;
-   display: none;
    z-index:3;
+   cursor: pointer;
  }
 

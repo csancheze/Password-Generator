@@ -12,7 +12,7 @@ var password = "";
 function writePassword() {
   var sure = confirm("Are you sure?");
   if (sure === false) {
-    location.reload();
+    
   } else {
   atLeastOne();
   var password = generatePassword();
@@ -31,10 +31,9 @@ function atLeastOne() {
               isChecked = true;
           };
       };
-      if (isChecked) {;
-          } else {
-              alert("Please, choose at least one character type");
-              location.reload();
+      if (isChecked === false) {
+        alert("Please, choose at least one character type");
+          } else {      
           }   
   }
 
