@@ -29,15 +29,17 @@ function atLeastOne() {
       for (var i = 0; i < checkBoxes.length; i++) {
           if ( checkBoxes[i].checked ) {
               isChecked = true;
-          };
-      };
+          }
+      }
       if (isChecked === false) {
         alert("Please, choose at least one character type");
           } else {      
           }   
   }
 
-//function for choosing correct array
+//function for choosing correct characters
+
+
 
 function chooseArray() {
   var upperCase = document.getElementById("uppercase");
@@ -101,6 +103,7 @@ generateBtn.addEventListener("click", writePassword);
 
 /*Testing
 
+Get info from form
 const passLength = document.getElementById("many")
 console.log(many.value);
 
@@ -115,8 +118,8 @@ console.log(numBers.checked);
 
 const symBols = document.getElementById("symbols");
 console.log(symBols.checked);
-*/
-/*Choosing characters
+
+Choosing characters
 if (upperCase.checked) {
   alphaArray = alphaArray + mayus;
 } if (lowerCase.checked) {
