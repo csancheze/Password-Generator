@@ -7,4 +7,4 @@ The task was to fix the code in order to make a working password generator. The 
 
  [Final Product:Github repository](https://csancheze.github.io/Password-Generator/)
 
- [Final Product:Password Generator](https://github.com/csancheze/Password-Generator/)
+ [Final Product:Password Generator](https://csancheze.github.io/Password-Generator/)
